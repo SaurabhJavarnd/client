@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useSelector, useDispatch } from "react-redux";
 import { getAllCars } from "../redux/actions/carsAction";
-import { Button, Row, Col } from "antd";
+import { Row, Col } from "antd";
 
 const Home = () => {
   const { cars } = useSelector((state) => state.carsReducer);
