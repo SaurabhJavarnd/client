@@ -3,9 +3,9 @@ import DefaultLayout from "../components/DefaultLayout";
 
 const Register = () => {
   return (
-    <DefaultLayout>
+    <div>
       <h1>Register Page</h1>
-    </DefaultLayout>
+    </div>
   );
 };
 
