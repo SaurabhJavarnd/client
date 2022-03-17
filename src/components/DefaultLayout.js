@@ -1,5 +1,5 @@
 import React from "react";
-import { Menu, Dropdown, Button, Space, Row, Col } from "antd";
+import { Menu, Dropdown, Button, Row, Col } from "antd";
 import { Link } from "react-router-dom";
 
 function DefaultLayout(props) {
@@ -32,12 +32,12 @@ function DefaultLayout(props) {
           <Col lg={20} sm={24} xs={24}>
             <div className="d-flex justify-content-between">
               <h1>
-                <b>
+                <br>
                   <Link to="/" style={{ color: "black" }}>
                     TRELLINGAUTO
                   </Link>
                   <h6>Rent Your Dream Car With Us</h6>
-                </b>
+                </br>
               </h1>
 
               <Dropdown overlay={menu} placement="bottomCenter">
