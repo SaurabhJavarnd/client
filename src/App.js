@@ -5,6 +5,10 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import BookingCar from "./pages/BookingCar";
+import UserBookings from "./pages/UserBookings";
+import AddCar from "./pages/AddCar";
+import EditCar from "./pages/EditCar";
+import AdminHome from "./pages/AdminHome";
 import "antd/dist/antd.css";
 
 function App() {
@@ -15,8 +19,19 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <ProtecteRoute path="/bookingcar/:carid" element={<BookingCar />} />
-          <ProtecteRoute path='/userbookings' exact component={UserBookings} />
+          <ProtectedRoute
+            path="/bookingcar/:carid"
+            exact
+            element={<BookingCar />}
+          />
+          <ProtectedRoute
+            path="/userbookings"
+            exact
+            element={<UserBookings />}
+          />
+          <ProtectedRoute path="/addcar" exact element={<AddCar />} />
+          <ProtectedRoute path="/editcar/:carid" exact element={<EditCar />} />
+          <ProtectedRoute path="/admin" exact element={<AdminHome />} />
         </Switch>
       </BrowserRouter>
     </div>
@@ -31,5 +46,3 @@ export function ProtectedRoute(props) {
   }
 }
 export default App;
-
-

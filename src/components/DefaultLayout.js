@@ -32,12 +32,12 @@ function DefaultLayout(props) {
           <Col lg={20} sm={24} xs={24}>
             <div className="d-flex justify-content-between">
               <h1>
-                <br>
+                <b>
                   <Link to="/" style={{ color: "black" }}>
                     TRELLINGAUTO
                   </Link>
                   <h6>Rent Your Dream Car With Us</h6>
-                </br>
+                </b>
               </h1>
 
               <Dropdown overlay={menu} placement="bottomCenter">

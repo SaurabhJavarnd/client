@@ -2,7 +2,7 @@ const initialData = {
   bookings: [],
 };
 
-export const bookingsReducer = (state = initialData, action) => {
+const bookingsReducer = (state = initialData, action) => {
   switch (action.type) {
     case "GET_ALL_BOOKINGS": {
       return {
@@ -13,4 +13,6 @@ export const bookingsReducer = (state = initialData, action) => {
     default:
       return state;
   }
-};
+};  
+
+export default bookingsReducer;

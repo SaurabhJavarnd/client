@@ -25,7 +25,7 @@ const Home = () => {
   }, [cars]);
 
   //to check booking, getcarsbooked & time slot calculations and checking of availability
-  function setFilter(values) {
+  const setFilter = (values) => {
     var selectedFrom = moment(values[0], "MMM DD yyyy HH:mm");
     var selectedTo = moment(values[1], "MMM DD yyyy HH:mm");
 
@@ -73,9 +73,9 @@ const Home = () => {
                   <img src={car.image} className="carimg" />
                   <div className="car-content d-flex align-items-center justify-content-between">
                     <div>
-                      <div>
-                        <p>{car.name} Car Name</p>
-                        <p>Rent per Km {car.rentPerKm}/-</p>
+                      <div className='text-left pl-2'>
+                        <p>{car.name}</p>
+                        <p>Rent per Km {car.rentPerKm} /-</p>
                       </div>
                       <div>
                         <button className="btn btn-primary">

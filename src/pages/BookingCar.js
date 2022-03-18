@@ -40,14 +40,14 @@ const BookingCar = ({ match }) => {
     }
   }, [driver, totalHours]);
 
-  function selectTimeSlots(values) {
+  const selectTimeSlots = (values) => {
     setFrom(moment(values[0]).format("MMM DD yyyy HH:mm"));
     setTo(moment(values[1]).format("MMM DD yyyy HH:mm"));
 
     setTotalHours(values[1].diff(values[0], "hours"));
   }
 
-  function onToken(token) {
+  const onToken = (token) => {
     const reqObj = {
       token,
       user: JSON.parse(localStorage.getItem("user"))._id,
@@ -77,8 +77,6 @@ const BookingCar = ({ match }) => {
             <img
               src={car.image}
               className="carimg2 bs1 w-100"
-              data-aos="flip-left"
-              data-aos-duration="1500"
             />
           </Col>
 

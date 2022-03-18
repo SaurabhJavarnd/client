@@ -1,11 +1,16 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import DefaultLayout from "../components/DefaultLayout";
 import { useDispatch, useSelector } from "react-redux";
 import { getAllBookings } from "../redux/actions/bookingActions";
+import { Col, Row } from "antd";
+import Spinner from "../components/Spinner";
+import moment from "moment";
 
 const UserBookings = () => {
+  const { loading } = useSelector((state) => state.alertsReducer);
   const dispatch = useDispatch();
   const { bookings } = useSelector((state) => state.bookingsReducer);
+  const user = JSON.parse(localStorage.getItem("user"));
 
   useEffect(() => {
     dispatch(getAllBookings());
@@ -19,7 +24,7 @@ const UserBookings = () => {
         <Row justify="center" gutter={16}>
           <Col lg={16} sm={24}>
             {bookings
-              .filter((o) => o.user == user._id)
+              .filter((o) => o.user === user._id)
               .map((booking) => {
                 return (
                   <Row gutter={16} className="bs1 mt-3 text-left">
